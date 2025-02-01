@@ -1,0 +1,75 @@
+.landing-background {
+    background-image: url('/assets/images/bird-group-through-sunset.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.why {
+    background-color: rgb(239, 162, 107);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 10px dashed white
+}
+
+.why p.section-title{
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 20px;
+    text-decoration: underline dashed black;
+}
+
+.why p {
+    font-size: 17px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+
+.why img {
+    height: 35vh;
+    width: 20vw;
+    border: 10px solid rgb(84, 175, 84);
+    border-radius: 70%;
+    background-color: lightblue;
+}
+
+.image-collage {
+    box-sizing: border-box;
+  }
+
+.birdCatalog {
+    background-color: rgb(246, 255, 246);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+  
+.birdCatalog p {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    text-decoration: underline dashed black;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+  
+.birdCatalog button {
+    font-family: cursive;
+    font-size: 35px;
+    border-radius: 10px;
+    border: 5px solid #46bc2c;
+    background-color: #cbff9d;
+    color: white;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.bird-catalog-image {
+    width: 23vw;
+    padding-top: 5px;
+    border: 5px black solid;
+}
+  
+

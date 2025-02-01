@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Overrides the Web Browsers default CSS Properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  button {
+    display: block;
+    margin: auto; 
+  }
+
+/* Allows for the Division of the Website into the Grid Layout */
+.grid-container {
+    Display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.single-grid-container {
+    Display: grid;
+    grid-template-columns: auto;
+}
+
+.double-grid-container {
+    Display: grid;
+    grid-template-columns: auto auto;
+}
+
+.center-grid {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

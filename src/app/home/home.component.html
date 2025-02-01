@@ -1,1 +1,43 @@
-<p> Home works</p>
+<div class="single-grid-container">
+    <div class="grid-item center-grid landing-background">
+        <p> We are Just Birds</p>
+    </div>
+</div>
+<div class="why">
+    <p class="center-grid section-title"> Why Just Birds? </p>
+    <div class="grid-container">
+        @for (item of listOfWhys; track $index) {
+            <div class="grid-item">
+                <div class="single-grid-container">
+                    <div class="grid-item center-grid">
+                        <img  class = "center-grid" [src] = "item.image" alt = "item.description Picture" />
+                    </div>
+                </div>
+                <p class="center-grid"> {{item.description}} </p>
+            </div>
+        }
+    </div>
+</div>
+<div class="birdCatalog">
+    <p class="center-grid"> Explore the Pet Birds to love NOW! </p>
+    <div class="double-grid-container">
+        <div class="grid-item">
+            @for (bird of birdList; track $index;) {
+                @if (($index % 2 == 0) && ($index <= 2 )) {
+                    <img class="bird-catalog-image" [src] = "bird.image" alt = "bird.name" style="width:100%" />
+                }
+            }
+        </div>
+        <div class="grid-item">
+            @for (bird of birdList; track $index;) {
+                @if (($index % 2 == 1) && ($index < 7)){
+                    <img class="bird-catalog-image" [src] = "bird.image" alt = "bird.name" style="width:100%" />
+                }
+            }
+        </div>
+    </div>
+    <button class="center-grid"> Explore Bird Catalog </button>
+</div>
+
+
+<p> Short list of Pet Birds to purchase</p>
