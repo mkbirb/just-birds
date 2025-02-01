@@ -1,0 +1,29 @@
+<div class="footer">
+    <div class="double-grid-container">
+        <div class="grid-item center-grid">
+            <img class = "logo" [src] = 'logo' alt = "Just Birds Logo" />
+        </div>
+        <div class="grid-item center-grid">
+            <p class="title"> Check out our Socials: </p>
+            <div class="single-grid-container">
+                <div class="grid-item">
+                    @for (social of socialsList; track $index) {
+                        <a [href] = "social.link"><img class = "socials-logo" [src] = "social.image" alt = 'social.socialName Logo' /></a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <p class="center-grid title"> Navigate </p>
+            <p class="center-grid"> About Us </p>
+            <p class="center-grid"> Bird Catalog </p>
+            <p class="center-grid"> Our Team </p>
+            <p class="center-grid"> Sign In </p>
+        </div>
+        <div class="grid-item">
+            <p class="center-grid title"> Visit my Portfolio: </p>
+            <button class="center-grid"> Explore Matthews Portfolio [Need to add] </button>
+        </div>
+    </div>
+    <p class="center-grid trademark"> 2025 JustBirds by Matthew Kristanto</p>
+</div>

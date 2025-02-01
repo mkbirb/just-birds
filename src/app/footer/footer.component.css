@@ -1,0 +1,44 @@
+.socials-logo {
+    height: 80px;
+    width: 85px;
+    padding: 7px;
+}
+
+.footer {
+    background-color: #8ccc74;
+}
+
+.footer img.logo {
+    height: 200px;
+    width: 550px;
+}
+
+.footer p {
+    font-size: 20px;
+    font-family: cursive;
+    padding-top: 5px;
+    color: white;
+}
+
+.footer p.title {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline dotted #7d602c;
+}
+
+.footer button {
+    font-family: cursive;
+    font-size: 35px;
+    border-radius: 10px;
+    border: 5px solid #227d00;
+    background-color: #79ff47;
+    color: white;
+    font-style: italic;
+    margin-top: 30px;    
+}
+
+.footer p.trademark {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ebe3ca;
+}
