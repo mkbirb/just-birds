@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { BIRDCATALOGLIST } from '../birdCatalog/BirdCatalogList';
 import { CommonModule } from '@angular/common';
-import {FooterComponent} from '../footer/footer.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 
 @Component({
@@ -10,7 +8,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [CommonModule, FooterComponent, NavbarComponent],
+  imports: [CommonModule],
 })
 export class HomeComponent {
   loveBirds = 'assets/images/love-birds.png';

@@ -1,1 +1,62 @@
-<p>about works!</p>
+<div class="about">
+    <div class="single-grid-container">
+        <div class="grid-item landing-background center-grid">
+            <p class="title"> About </p>
+        </div>
+    </div>
+    <div class="double-grid-container">
+        <div class="grid-item whoAreWe center-grid">
+            <div class="single-grid-container">
+                <div class="grid-item center-grid">
+                    <p class="section-title"> Who are we? </p>
+                </div>
+                <div class="grid-item center-grid">
+                    <p> At JustBirds, we are passionate about bringing joy to bird lovers by offering a wide variety of healthy, 
+                    hand-raised pet birds from reputable breeders. Whether you're looking for a friendly budgie, a talkative parrot, 
+                    or a majestic macaw, we have the perfect bird to match your lifestyle.</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img [src] = "whoAreWePicture" alt = "Who Are We Picture" />
+        </div>
+    </div>
+    <div class="reasons">
+        <div class="double-grid-container">
+            <div class="grid-item">
+                <img [src] = "reasonsPicture" alt = "Reasons Picture" />
+            </div>
+            <div class="grid-item">
+                <p class="section-title"> Just Birds Reasons </p>
+                <div class="double-grid-container">
+                    @for (reason of reasons; track $index) {
+                        <div class="grid-item center-grid">
+                            <img class="checkboxes" [src]="checkbox" alt = "Checkbox" />
+                        </div>
+                        <div class="grid-item">
+                            <p class="heading" > {{reason.heading}} </p>
+                            <p> {{reason.description}}</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="meetTheTeam">
+        <p class="center-grid section-title"> Meet the Team </p>
+        <div class="grid-container">
+            @for (person of team; track $index) {
+                <div class="grid-item">
+                    <div class="single-grid-container">
+                        <div class="grid-item center-grid">
+                            <img [src] = "person.image" alt = "person.name Picture" />
+                        </div>
+                    </div>
+                    <p class="center-grid name"> {{person.name}} </p>
+                    <p class="center-grid status"> {{person.status}} </p>
+                    <p class="center-grid"> {{person.description}} </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
