@@ -1,0 +1,17 @@
+<div class="navbar">
+    <div class="single-grid-container">
+        <div class="grid-item center-grid">
+            <img [src] = "logo" alt = "logo" />
+        </div>
+    </div>
+    <div class="grid-item center-grid">
+        <hr>
+    </div>
+    <div class="grid-item center-grid">
+        <nav class="center-grid">
+            @for (link of links; track $index) {
+                <a [routerLink] = "link.link"> <p> {{link.title}} </p></a>
+            }
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #e3cea3;
+    padding-bottom: 20px;
+}
+
+.navbar img {
+    height: 150px;
+    width: 390px;
+    padding-bottom: 10px;
+}
+
+.navbar hr {
+    height: 5px;
+    width: 200px;
+    background-color: white;
+    align-self: center;
+}
+
+.navbar a {
+    font-size: 30px;
+    color: white;
+    padding-left: 5vw; 
+    padding-top: 30px;
+    font-weight: bold;   
+}
