@@ -1,0 +1,20 @@
+<div class="bird-catalog">
+    <p class="center-grid"> Bird Catalog </p>
+
+    <div class="grid-container productList">
+        @for (product of productList; track $index) {
+            <div class="grid-item product">
+                <div class="double-grid-container ">
+                    <div class="grid-item center-grid">
+                        <img [src] = "product.image" alt = "product.name Picture"/>
+                    </div>
+                    <div class="grid-item">
+                        <p> {{product.name}} </p>
+                        <p> ${{product.price}} </p>
+                        <button class="add"> Add </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

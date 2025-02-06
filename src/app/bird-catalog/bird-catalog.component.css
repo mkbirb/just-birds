@@ -1,0 +1,34 @@
+.bird-catalog img {
+    height: 200px;
+    width: 200px;
+    border-radius: 70%;
+    border: 10px solid #876408;
+}
+
+.bird-catalog p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    color: black;
+}
+
+
+.bird-catalog div.product {
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+.bird-catalog button.add {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 5px solid #bf9e49;
+    background-color: #f5d482;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 30px;
+}
