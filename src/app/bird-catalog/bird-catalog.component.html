@@ -1,8 +1,19 @@
 <div class="bird-catalog">
     <p class="center-grid"> Bird Catalog </p>
-    <form class="center-grid" (input)="searchProduct($event)">
-        <input class = "search" type="text" placeholder="Search Item" [(ngModel)]='searchInput' name="searchInput"/>
-        <input class = "reset" type="submit" (click)="searchReset()" value="Reset"/>
+    <form (input)="searchProduct()">
+        <div class="single-grid-container">
+            <div class="grid-item center-grid">
+                <select [(ngModel)]="sortOption" (change)="sortProducts()" name="sortProducts">
+                    <option value="alphabetical" selected> Sort By: Alphabetical </option>
+                    <option value="cheapest"> Sort By: Cheapest Price </option>
+                    <option value="highest"> Sort By: Highest Price </option>
+                </select>
+            </div>
+            <div class="grid-item center-grid">
+                <input class = "search" type="text" placeholder="Search Item" [(ngModel)]='searchInput' name="searchInput"/>
+                <input class = "reset" type="submit" (click)="searchReset()" value="Reset"/>
+            </div>
+        </div>
     </form>
 
     @if (searchInput.length > 0) {
