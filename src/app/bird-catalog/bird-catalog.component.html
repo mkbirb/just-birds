@@ -1,12 +1,29 @@
 <div class="bird-catalog">
     <p class="center-grid"> Bird Catalog </p>
+    <form class="center-grid" (input)="searchProduct($event)">
+        <input class = "search" type="text" placeholder="Search Item" [(ngModel)]='searchInput' name="searchInput"/>
+        <input class = "reset" type="submit" (click)="searchReset()" value="Reset"/>
+    </form>
+
+    @if (searchInput.length > 0) {
+        <p> Showing {{searchedList.length}} results for {{searchInput}}</p>
+    }
+
+    @if (searchedList.length == 0) {
+        <div class="noProducts">
+            <div class="center-grid">
+                <img [src] = "noProducts" />
+            </div>
+            <p> No Products Found </p>
+        </div>
+    }
 
     <div class="grid-container productList">
-        @for (product of productList; track $index) {
+        @for (product of searchedList; track $index) {
             <div class="grid-item product">
                 <div class="double-grid-container ">
                     <div class="grid-item center-grid">
-                        <img [src] = "product.image" alt = "product.name Picture"/>
+                        <img class = "productImage" [src] = "product.image" alt = "product.name Picture"/>
                     </div>
                     <div class="grid-item">
                         <p> {{product.name}} </p>

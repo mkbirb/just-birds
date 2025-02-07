@@ -1,4 +1,4 @@
-.bird-catalog img {
+.bird-catalog img.productImage {
     height: 200px;
     width: 200px;
     border-radius: 70%;
@@ -13,6 +13,28 @@
     padding: 5px;
     color: black;
 }
+
+.bird-catalog form {
+    padding: 10px;
+}
+
+.bird-catalog form input.search {
+    width: 25vw;
+    height: 35px;
+    font-size: 30px;
+}
+
+.bird-catalog form input.reset {
+    margin-left: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 5px solid #9f0404;
+    background-color: #fc9595;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
 
 
 .bird-catalog div.product {
@@ -31,4 +53,20 @@
     padding: 5px;
     font-weight: bold;
     margin-top: 30px;
+}
+
+.noProducts {
+    padding: 30px;
+}
+
+.noProducts img{
+    height: 230px;
+    width: 250px;
+    padding-bottom: 10px;
+}
+
+.noProducts p {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 35px;
 }
