@@ -1,0 +1,18 @@
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-not-found',
+  imports: [],
+  templateUrl: './not-found.component.html',
+  styleUrl: './not-found.component.css'
+})
+export class NotFoundComponent {
+  notFoundPicture = 'assets/images/page-not-found.png';
+  
+  router = inject(Router);
+
+  backToHome() {
+    this.router.navigateByUrl('/home')
+  }
+}
