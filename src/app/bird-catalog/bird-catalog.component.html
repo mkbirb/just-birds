@@ -30,19 +30,20 @@
     }
 
     <div class="grid-container productList">
-        @for (product of searchedList; track $index) {
-            <div class="grid-item product">
-                <div class="double-grid-container ">
-                    <div class="grid-item center-grid">
-                        <img class = "productImage" [src] = "product.image" alt = "product.name Picture"/>
-                    </div>
-                    <div class="grid-item">
-                        <p> {{product.name}} </p>
-                        <p> ${{product.price}} </p>
-                        <button class="add"> Add </button>
-                    </div>
+        <div class="grid-item product" *ngFor="let product of searchedList | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+            <div class="double-grid-container ">
+                <div class="grid-item center-grid">
+                    <img class = "productImage" [src] = "product.image" alt = "product.name Picture"/>
+                </div>
+                <div class="grid-item">
+                    <p> {{product.name}} </p>
+                    <p> ${{product.price}} </p>
+                    <button class="add"> Add </button>
                 </div>
             </div>
-        }
+        </div>
     </div>
+
+    <pagination-controls class="center-grid pagination" (pageChange)="currentPage = +$event"></pagination-controls>
+
 </div>

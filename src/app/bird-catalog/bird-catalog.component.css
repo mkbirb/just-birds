@@ -80,3 +80,24 @@
     font-style: italic;
     font-size: 35px;
 }
+
+/* For the Pagination */
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .ngx-pagination li {
+    font-size: 20px; 
+    padding: 12px 16px; 
+    border-radius: 5px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagination .ngx-pagination .pagination-previous {
+    font-weight: bold;
+}
+
+.pagination .ngx-pagination .pagination-next {
+    font-weight: bold;
+    background-color: rgb(166, 255, 166);
+}

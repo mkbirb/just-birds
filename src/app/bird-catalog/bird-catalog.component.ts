@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BIRDCATALOGLIST } from '../birdCatalog/BirdCatalogList';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bird-catalog',
-  imports: [FormsModule],
+  imports: [FormsModule, NgxPaginationModule, CommonModule],
   templateUrl: './bird-catalog.component.html',
-  styleUrl: './bird-catalog.component.css'
+  styleUrl: './bird-catalog.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class BirdCatalogComponent implements OnInit {
   noProducts = 'assets/images/no-products.png'
@@ -20,6 +23,11 @@ export class BirdCatalogComponent implements OnInit {
 
   // Set Default to Alphabetical
   sortOption = 'alphabetical';
+
+  // For the Pagination
+  currentPage = 1;
+
+  itemsPerPage = 9;
 
   ngOnInit(): void {
     this.sortProducts();
