@@ -3,10 +3,11 @@ import {FormsModule} from '@angular/forms';
 import { BIRDCATALOGLIST } from '../birdCatalog/BirdCatalogList';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bird-catalog',
-  imports: [FormsModule, NgxPaginationModule, CommonModule],
+  imports: [FormsModule, NgxPaginationModule, RouterModule, CommonModule],
   templateUrl: './bird-catalog.component.html',
   styleUrl: './bird-catalog.component.css',
   encapsulation: ViewEncapsulation.None

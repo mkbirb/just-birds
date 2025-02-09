@@ -1,0 +1,78 @@
+.bird-details {
+    padding-top: 20px;
+}
+
+.bird-details p {
+    text-align: center;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.bird-details p.birdName {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: dotted underline black;
+}
+
+.bird-details p.price {
+    font-style: italic;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bird-details div.productAmount {
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.bird-details div.productAmount button {
+    width: 5vw;
+    height: 5vh;
+    font-size: 30px;
+    color: white;
+    
+}
+
+.bird-details div.productAmount button.quantity {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    background-color: rgb(80, 140, 140);
+    border-radius: 10px;
+}
+
+.bird-details div.productAmount button.quantity:disabled {
+    background-color: rgb(194, 194, 194);
+}
+
+.bird-details button {
+    display: block;
+    cursor: pointer;
+}
+
+.bird-details button.back {
+    background-color: rgb(42, 166, 255);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.bird-details div.productAmount  button.add {
+    margin-top: 30px;
+    width: 300px;
+    background-color: rgb(183, 249, 183);
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.bird-details img {
+    height: 590px;
+    width: 550px;
+    border: 15px dashed rgb(74, 52, 0);
+    border-radius: 10px;
+}

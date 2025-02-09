@@ -1,0 +1,32 @@
+<div class="bird-details">
+    <button class="back" (click)="backToCatalog()"> Go Back </button>
+    @if (birdData) {
+        <div class="double-grid-container center-grid">
+            <div class="grid-item">
+                <img [src] = "birdData.image" alt = "Bird Picture" />
+            </div>
+            <div class="grid-item">
+                <p class="center-grid birdName"> {{birdData.name}} </p>
+                <p class="center-grid price"> Price: ${{birdData.price}} </p>
+                <div class="productAmount">
+                    <div class="grid-container center-grid">
+                        <div class="grid-item">
+                            <button class="quantity" (click)="decrement()"  [disabled]="birdQuantity <= 0">-</button>
+                        </div>
+                        <div class="grid-item">
+                            <p> Quantity: {{birdQuantity}} </p>
+                        </div>
+                        <div class="grid-item">
+                            <button class="quantity" (click)="increment()">+</button>
+                        </div>
+                    </div>
+                    <button class="center-grid add"> Add To Cart </button>
+                </div>
+                <p class="center-grid"> {{birdData.description}} </p>
+            </div>
+        </div>
+    }
+    @else {
+        <p> Bird Not Found </p>
+    }
+</div>

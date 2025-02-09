@@ -1,5 +1,5 @@
 <div class="bird-catalog">
-    <p class="center-grid"> Bird Catalog </p>
+    <p class="center-grid title"> Bird Catalog </p>
     <form (input)="searchProduct()">
         <div class="single-grid-container">
             <div class="grid-item center-grid">
@@ -38,7 +38,7 @@
                 <div class="grid-item">
                     <p> {{product.name}} </p>
                     <p> ${{product.price}} </p>
-                    <button class="add"> Add </button>
+                    <button [routerLink]="['/bird', product.id]" role="button" class="view"> View </button>
                 </div>
             </div>
         </div>
