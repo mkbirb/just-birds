@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { BirdCatalogComponent } from './bird-catalog/bird-catalog.component';
 import { BirdDetailsComponent } from './bird-details/bird-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'bird-catalog', component: BirdCatalogComponent},
   { path: 'bird/:id', component: BirdDetailsComponent},
+  { path: 'sign-in', component: SignInComponent},
   { path: '**', component: NotFoundComponent}
 ];

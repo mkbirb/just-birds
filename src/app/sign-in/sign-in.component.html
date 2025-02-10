@@ -1,0 +1,37 @@
+<div class="signIn">
+    <div class="double-grid-container">
+        <div class="grid-item">
+            @if (signIn == true) {
+                <img [src]="signInImage" alt="Sign In Image" />
+            }
+            @else {
+                <img [src]="signUpImage" alt="Sign Up Image" />
+            }
+        </div>
+        <div class="grid-item center-grid">
+            <form class="vertical-flex-container">
+                <img class="logo" [src]="logo" alt = "Logo" />
+                @if (signIn == true) {
+                    <p class="center-grid title"> Sign In </p>
+                }
+                @else {
+                    <p class="center-grid title"> Sign Up </p>
+                }
+                <label for="username"> Username </label>
+                <input name="username" type="text" placeholder="Enter Username" />
+                <label for="password"> Password </label>
+                <input type="password" placeholder="Enter Password" />
+
+                @if (signIn == true) {
+                    <button (click)="switchEnterMethod()"> Sign Up Instead </button>
+                }
+                @else {
+                    <label for="confirmPassword"> Confirm Password </label>
+                    <input type="password" placeholder="Enter Password" />
+                    <button (click)="switchEnterMethod()"> Sign In Instead </button>
+                }
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+</div>
