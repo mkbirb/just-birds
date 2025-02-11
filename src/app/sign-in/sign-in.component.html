@@ -1,7 +1,7 @@
 <div class="signIn">
     <div class="double-grid-container">
         <div class="grid-item">
-            @if (signIn == true) {
+            @if (signInMethod == true) {
                 <img [src]="signInImage" alt="Sign In Image" />
             }
             @else {
@@ -9,28 +9,29 @@
             }
         </div>
         <div class="grid-item center-grid">
-            <form class="vertical-flex-container">
+            <form class="vertical-flex-container" (ngSubmit)="onSubmit()" #myForm="ngForm">
                 <img class="logo" [src]="logo" alt = "Logo" />
-                @if (signIn == true) {
+                @if (signInMethod == true) {
                     <p class="center-grid title"> Sign In </p>
                 }
                 @else {
                     <p class="center-grid title"> Sign Up </p>
                 }
-                <label for="username"> Username </label>
-                <input name="username" type="text" placeholder="Enter Username" />
-                <label for="password"> Password </label>
-                <input type="password" placeholder="Enter Password" />
+                <label for="usernameInput"> Username </label>
+                <input name="username" id="usernameInput" type="text" placeholder="Enter Username" [(ngModel)]="user.username"  autocomplete="username" required/>
+                <label for="passwordInput"> Password </label>
+                <input name="password"  id="passwordInput" type="password" placeholder="Enter Password" [(ngModel)]="user.password"  autocomplete="current-password" required/>
 
-                @if (signIn == true) {
+                @if (signInMethod == true) {
+                    <input type="submit" />
                     <button (click)="switchEnterMethod()"> Sign Up Instead </button>
                 }
                 @else {
                     <label for="confirmPassword"> Confirm Password </label>
-                    <input type="password" placeholder="Enter Password" />
+                    <input name="confirmPassword" type="password" placeholder="Enter Password" required [(ngModel)]="user.confirmPassword"/>
+                    <input type="submit" />
                     <button (click)="switchEnterMethod()"> Sign In Instead </button>
                 }
-                <input type="submit" />
             </form>
         </div>
     </div>
