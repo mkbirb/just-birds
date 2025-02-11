@@ -41,6 +41,7 @@ export class SignInComponent {
       if (this.canEnter == true) {
         alert('Sign In Successful');
         
+        this.authService.setUsername(this.user.username);
         this.router.navigate(['/dashboard'])
       }
       else {

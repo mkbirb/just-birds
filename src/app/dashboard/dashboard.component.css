@@ -1,0 +1,33 @@
+.dashboard {
+    margin-top: 20px;
+}
+
+.dashboard img {
+    height: 300px;
+    width: 370px;
+    border-radius: 10px;
+    border: 5px solid black;
+    margin-bottom: 20px;
+}
+
+.dashboard p {
+    font-size: 70px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.dashboard button {
+    background-color: rgb(42, 166, 255);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.dashboard button.logout {
+    background-color: rgb(187, 95, 95);
+}

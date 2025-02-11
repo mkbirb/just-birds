@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,11 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   private storageKey = 'userData';
+
+  // Allows the sharing of the Username that is currently logged in
+  private usernameSource = new BehaviorSubject<string | null>(null);
+  currentUsername = this.usernameSource.asObservable();
+
   constructor() { }
 
   signUp(user: {username: string; password: string}): boolean {
@@ -62,7 +68,14 @@ export class AuthService {
     return !!localStorage.getItem(this.storageKey);
   }
 
+  setUsername(username: string) {
+    this.usernameSource.next(username);
+  }
+
   logout():void {
     localStorage.removeItem(this.storageKey);  
+    
+    // Reset the Current Username
+    this.usernameSource.next(null);
   }
 }
