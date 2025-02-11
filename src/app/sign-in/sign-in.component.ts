@@ -70,9 +70,6 @@ export class SignInComponent {
           this.user.username = '';
           this.user.password = '';
         }
-        else {
-          alert('Username already exists, please choose a different Username');
-        }
       }
       else {
         alert('Password given does NOT Match');

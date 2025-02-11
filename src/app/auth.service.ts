@@ -12,7 +12,12 @@ export class AuthService {
     let users = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
 
     // Prevents SignUp if the Username already in Users List
+    if (this.isPasswordValid(user.password) == false) {
+      return false;
+    }
+    
     if (users.some((u:any) => u.username == user.username)) {
+      alert('Username already exists, please choose a different Username');
       return false;
     }
     else {
@@ -22,6 +27,26 @@ export class AuthService {
   
       return true;
     }
+  }
+
+  private isPasswordValid(password: string): boolean {
+    if (password.length < 8) {
+      alert('Password must be at least 8 Characters long');
+      return false;
+    }
+    else if (!/[A-Z]/.test(password)) {
+      alert('Password must contain at least one uppercase letter.');
+      return false;
+    }
+    else if (!/\d/.test(password)) {
+      alert('Password must contain at least one number.');
+      return false;
+    }
+    else if (!/[\W_]/.test(password)) {
+      alert('Password must contain at least one special character');
+      return false;
+    }  
+    return true;
   }
 
   signIn(username: string, password: string): boolean {
