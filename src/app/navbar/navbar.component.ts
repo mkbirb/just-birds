@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -9,13 +10,30 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
-  logo = 'assets/images/just-birds-logo.png'
+export class NavbarComponent implements OnInit {
+
+  constructor(private authservice: AuthService) {};
+
+  logo = 'assets/images/just-birds-logo.png';
+
+  isLoggedIn: boolean = false;
 
   links = [
-    {title: "Home", link: "/"},
-    {title: "About", link: "/about"},
-    {title: "Bird Catalog", link: "/bird-catalog"},
-    {title: "Sign In", link: "/sign-in"}
+    {title: "Home", link: "/", forLoggedIn: "both"},
+    {title: "About", link: "/about",  forLoggedIn: "both"},
+    {title: "Bird Catalog", link: "/bird-catalog",  forLoggedIn: "both"},
+    {title: "Sign In", link: "/sign-in",  forLoggedIn: false},
+    {title: "Logout", link: "/", forLoggedIn: true}
   ]
+
+  ngOnInit(): void {
+    this.authservice.isLoggedIn.subscribe(status => {
+      this.isLoggedIn = status;
+    })
+  }
+
+  logout(): void {
+    this.authservice.logout();
+    alert("You have successfully Logged Out");
+  }
 }

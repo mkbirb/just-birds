@@ -12,6 +12,9 @@ export class AuthService {
   private usernameSource = new BehaviorSubject<string | null>(null);
   currentUsername = this.usernameSource.asObservable();
 
+  private isLoggedInSource = new BehaviorSubject<boolean>(false);
+  isLoggedIn = this.isLoggedInSource.asObservable();
+
   constructor() { }
 
   signUp(user: {username: string; password: string}): boolean {
@@ -60,6 +63,8 @@ export class AuthService {
 
     const foundUser = users.find((user:any) => (user.username === username) && (user.password === password));
 
+    this.isLoggedInSource.next(true);
+
     return !!foundUser;
   }
 
@@ -74,6 +79,8 @@ export class AuthService {
 
   logout():void {
     localStorage.removeItem(this.storageKey);  
+
+    this.isLoggedInSource.next(false);
     
     // Reset the Current Username
     this.usernameSource.next(null);
