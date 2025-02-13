@@ -12,7 +12,12 @@
             @for (link of links; track $index) {
                 <!-- Display the Links for the appropiate Logged In Status -->
                 @if ((isLoggedIn == link.forLoggedIn) || (link.forLoggedIn == "both")) {
-                    <a [routerLink] = "link.link" (click)="logout()"> <p> {{link.title}} </p></a>
+                    @if (link.title == "Logout") {
+                        <a [routerLink] = "link.link" (click)="logout()"> <p> {{link.title}} </p></a>
+                    }
+                    @else {
+                        <a [routerLink] = "link.link"> <p> {{link.title}} </p></a>
+                    }
                 }
             }
         </nav>
