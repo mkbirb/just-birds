@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BIRDCATALOGLIST } from '../birdCatalog/BirdCatalogList';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-bird-details',
@@ -15,6 +16,8 @@ export class BirdDetailsComponent implements OnInit {
   birdList = BIRDCATALOGLIST;
 
   birdQuantity = 0;
+
+  constructor(private cartService: CartService){};
 
   
   // Get Current Route
@@ -37,5 +40,18 @@ export class BirdDetailsComponent implements OnInit {
 
   decrement() {
     this.birdQuantity--;
+  }
+
+  addToCart() {
+    // Check to see whether there is an Existing Cart
+
+    if (this.birdData) {
+      this.cartService.addToCart(this.birdData, this.birdQuantity);
+      alert("Successfully added to Cart");
+    }
+    else {
+      alert("Cannot add to Cart");
+      console.error('Error: birdData is undefined');
+    }
   }
 }

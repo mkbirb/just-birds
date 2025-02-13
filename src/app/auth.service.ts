@@ -77,6 +77,10 @@ export class AuthService {
     this.usernameSource.next(username);
   }
 
+  getCurrentUsername(): string {
+    return this.usernameSource.getValue() ?? "";
+  }
+
   logout():void {
     localStorage.removeItem(this.storageKey);  
 

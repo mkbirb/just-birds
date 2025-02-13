@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
     {title: "Home", link: "/", forLoggedIn: "both"},
     {title: "About", link: "/about",  forLoggedIn: "both"},
     {title: "Bird Catalog", link: "/bird-catalog",  forLoggedIn: "both"},
+    {title: "Dashboard", link: "/dashboard", forLoggedIn: true},
     {title: "Sign In", link: "/sign-in",  forLoggedIn: false},
     {title: "Logout", link: "/", forLoggedIn: true}
   ]

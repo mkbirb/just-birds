@@ -1,1 +1,11 @@
-<p>cart works!</p>
+@if (cart.length > 0) {
+    @for (product of cart; track $index) {
+        <p> {{product.item.name}} </p>
+        <p> {{product.quantity}} </p>
+        <button (click)="removeItem($index)"> Remove </button>
+    }
+    <button (click)="clearAll()"> Clear All </button>
+}
+@else {
+    <p> No Items in Cart</p>
+}
