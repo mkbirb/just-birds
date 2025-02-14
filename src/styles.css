@@ -40,3 +40,9 @@
     flex-direction: column;
     align-items: center;
   }
+
+.horizontal-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

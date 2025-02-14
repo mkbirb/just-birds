@@ -1,11 +1,68 @@
 @if (cart.length > 0) {
-    @for (product of cart; track $index) {
-        <p> {{product.item.name}} </p>
-        <p> {{product.quantity}} </p>
-        <button (click)="removeItem($index)"> Remove </button>
-    }
-    <button (click)="clearAll()"> Clear All </button>
+    <div class="cart">
+        <p class="center-grid title"> Shopping Cart </p>
+        <div class="grid-container">
+            <div class="grid-item">
+            </div>
+            <div class="grid-item">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <p class="titles"> Product Title </p>
+                    </div>
+                    <div class="grid-item">
+                        <p class="center-grid titles"> Individual Price</p>
+                    </div>
+                    <div class="grid-item">
+                        <p class="center-grid titles"> Total Price</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+            </div>
+            @for (product of cart; track $index) {
+                    <div class="grid-item center-grid">
+                        <img [src]="product.item.image" alt="Product Image" />
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <p> {{product.item.name}} </p>
+                                <p> <b>Quantity:</b> {{product.quantity}} </p>
+                            </div>
+                            <div class="grid-item">
+                                <p class="center-grid"> ${{product.item.price}} </p>
+                            </div>
+                            <div class="grid-item">
+                                <p class="center-grid"> ${{product.item.price * product.quantity}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <button> View </button>
+                        <button  class="remove" (click)="removeItem($index)"> Remove </button>
+                    </div>
+            }
+            <div class="grid-item center-grid">
+            </div>
+            <div class="grid-item center-grid">
+            </div>
+            <div class="grid-item">
+                <button class="removeAll" (click)="clearAll()"> Clear All </button>
+            </div>
+        </div>
+        <div class="vertical-flex-container finalDetails">
+            <p> <b> Number of Items: </b> {{cart.length}}</p>
+            <p class="finalPrice"> <b> Final Price: </b> ${{finalPrice}}</p>
+            <button class="pay"> Pay </button>
+        </div>
+    </div>
 }
 @else {
-    <p> No Items in Cart</p>
+    <div class="noCartItems">
+        <div class="vertical-flex-container">
+            <img [src]="noItemsPicture" alt="No Items in Cart" />
+            <p> No Items in Cart</p>
+            <button (click)="toCatalog()"> Add Items </button>
+        </div>
+    </div>
 }

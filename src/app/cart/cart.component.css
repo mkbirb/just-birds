@@ -1,0 +1,89 @@
+.noCartItems img {
+     height: 350px;
+     width: 390px;
+}
+
+.noCartItems p {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 30px;
+    text-decoration: dashed underline black;
+}
+
+.noCartItems button {
+    background-color: rgb(42, 166, 255);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.cart div.grid-container div {
+    padding-top: 20px;
+}
+.cart img {
+    height: 230px;
+    width: 205px;
+    border-radius: 10px;
+}
+
+.cart p.title {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: underline dashed black;  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cart p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart p.titles {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: cursive;
+    text-decoration: dotted black underline;
+}
+
+.cart p.finalPrice {
+    font-size: 30px;
+}
+
+.cart button {
+    margin-bottom: 10px;
+    background-color: rgb(42, 166, 255);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.cart button.remove {
+    background-color: red;
+}
+
+.cart button.removeAll {
+    background-color: rgb(117, 0, 0);
+}
+
+.cart button.pay {
+    background-color: greenyellow;
+    width: 230px;
+}
+
+.cart div.finalDetails p {
+    margin-bottom: 20px;
+}
