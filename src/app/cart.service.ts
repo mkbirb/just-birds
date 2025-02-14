@@ -36,7 +36,7 @@ export class CartService {
       this.cart = savedCart ? JSON.parse(savedCart) : [];
       this.cartSource.next(this.cart);
     } else {
-      console.warn('localStorage is not available.');
+      console.warn('LocalStorage is not available.');
       this.cart = [];
     }
 

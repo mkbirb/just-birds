@@ -1,0 +1,32 @@
+.cart-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(231, 232, 185);
+    border: 5px solid black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-image: url('/assets/images/cart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.cart-notification p {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.cart-notification div.countIcon {
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    background-color: red;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}

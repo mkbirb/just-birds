@@ -1,0 +1,10 @@
+<div class="cart-notification" (click)="toCart()">
+    @if (cartCount > 0) {
+        <div class="countIcon">
+            @if (cartCount < 100) {
+                <!-- Only display the amount in cart if double digits -->
+                <p> {{cartCount}} </p>
+            }
+        </div>
+    }
+</div>
