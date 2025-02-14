@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="grid-item">
-                        <button> View </button>
+                        <button (click)="viewItem(product.item.id)"> View </button>
                         <button  class="remove" (click)="removeItem($index)"> Remove </button>
                     </div>
             }

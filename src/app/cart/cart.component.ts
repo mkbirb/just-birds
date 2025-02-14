@@ -35,6 +35,10 @@ export class CartComponent implements OnInit{
       this.cartService.removeItem(index);
     }
 
+    viewItem(productId: number) {
+      this.router.navigateByUrl(`/bird/${productId}`);
+    }
+
     clearAll() {
       this.cartService.clearCart();
       alert("You have Cleared the Cart");
