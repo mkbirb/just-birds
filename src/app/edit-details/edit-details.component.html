@@ -1,0 +1,28 @@
+<div class="editDetails">
+    <div class="vertical-flex-container">
+        <p> Edit Details </p>
+        <form #editForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="vertical-flex-container">
+                <label for="username"> Username </label>
+                <input 
+                    name="username" 
+                    type="text" 
+                    placeholder="Your Username" 
+                    [(ngModel)]="username" 
+                     />
+                <label for="password"> Password </label>
+                <input 
+                    name="password" 
+                    [type]="showPassword ? 'text' : 'password'" 
+                    [(ngModel)]="password" 
+                    placeholder="Your Password" 
+                     />
+                <img class="eye-icon" (click)="showOrHidePassword()" [src]="showPassword ? showPasswordIcon: hidePasswordIcon" />
+                <div class="horizontal-flex-container">
+                    <input type="submit">
+                    <button type="button" (click)="reset()"> Reset </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

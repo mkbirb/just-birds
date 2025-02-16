@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { parse } from 'path';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -59,13 +60,18 @@ export class AuthService {
   }
 
   signIn(username: string, password: string): boolean {
-    let users = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    let signInValid = false;
 
-    const foundUser = users.find((user:any) => (user.username === username) && (user.password === password));
+    const foundUser = this.findUser(username);
 
-    this.isLoggedInSource.next(true);
+    if (!!foundUser) {
+      if (foundUser.password == password) {
+        signInValid = true;
+        this.isLoggedInSource.next(true);
+      }
+    }
 
-    return !!foundUser;
+    return signInValid;
   }
 
   isAuthenticated(): boolean {
@@ -81,9 +87,77 @@ export class AuthService {
     return this.usernameSource.getValue() ?? "";
   }
 
-  logout():void {
-    localStorage.removeItem(this.storageKey);  
+  getCurrentPassword(): string {
+    const currentUser = this.findUser(this.getCurrentUsername());
 
+    if (currentUser) {
+      return currentUser.password;
+    }
+    else {
+      alert("Current Password cannot be found");
+      return '';
+    }
+  }
+
+
+  findUserIndex(username: string) {
+    let users = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+
+    const userIndex = users.findIndex((u: any) => u.username === username);
+
+    return {userIndex, users};
+  }
+
+  changeUsername(oldUsername: string, newUsername: string): boolean {
+    const {userIndex, users} = this.findUserIndex(oldUsername);
+
+    if (userIndex !== -1) {
+      // If found Username
+      users[userIndex].username = newUsername;
+
+      localStorage.setItem(this.storageKey, JSON.stringify(users));
+
+      // Set Current User to the new Username
+      this.setUsername(newUsername);
+  
+      return true;
+    }
+    else {
+      alert("Error: Username cannot be found: " + oldUsername); 
+
+      return true;
+      
+    }
+    
+  }
+
+  changePassword(username: string, newPassword: string): boolean {
+    if (this.isPasswordValid(newPassword) == false) {
+        return false;
+    }
+
+    // Find the Specific User
+    const {userIndex, users} = this.findUserIndex(username);
+
+
+    users[userIndex].password = newPassword;
+  
+  
+    localStorage.setItem(this.storageKey, JSON.stringify(users));
+
+    return true;
+    
+  }
+
+  findUser(username: string): any {
+    let users = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+
+    const foundUser = users.find((user:any) => (user.username === username));
+
+    return foundUser;
+  }
+
+  logout():void {
     this.isLoggedInSource.next(false);
     
     // Reset the Current Username

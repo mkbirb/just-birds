@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CartComponent } from './cart/cart.component';
+import { EditDetailsComponent } from './edit-details/edit-details.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'sign-in', component: SignInComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'cart', component: CartComponent},
+  { path: 'edit-details', component: EditDetailsComponent},
   { path: '**', component: NotFoundComponent}
 ];

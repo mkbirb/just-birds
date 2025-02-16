@@ -1,0 +1,14 @@
+.editDetails p.title {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: underline dashed black;  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.editDetails img.eye-icon {
+    height: 30px;
+    width: 35px;
+    cursor: pointer;
+}
