@@ -9,18 +9,21 @@
                 <p class="center-grid birdName"> {{birdData.name}} </p>
                 <p class="center-grid price"> Price: ${{birdData.price}} </p>
                 <div class="productAmount">
-                    <div class="grid-container center-grid">
-                        <div class="grid-item">
-                            <button class="quantity" (click)="decrement()"  [disabled]="birdQuantity <= 0">-</button>
+                    <form>
+                        <div class="grid-container center-grid">
+                            <div class="grid-item">
+                                <button type="button" class="quantity" (click)="decrement()"  [disabled]="birdQuantity <= 1">-</button>
+                            </div>
+                            <div class="grid-item center-grid">
+                                <p> Quantity: </p>
+                                <input type="number" [(ngModel)]="birdQuantity" name="quantity" min="1" (keydown)="preventNegative($event)">
+                            </div>
+                            <div class="grid-item">
+                                <button type="button" class="quantity" (click)="increment()">+</button>
+                            </div>
                         </div>
-                        <div class="grid-item">
-                            <p> Quantity: {{birdQuantity}} </p>
-                        </div>
-                        <div class="grid-item">
-                            <button class="quantity" (click)="increment()">+</button>
-                        </div>
-                    </div>
-                    <button class="center-grid add" (click)="addToCart()"> Add To Cart </button>
+                        <button type="button" class="center-grid add" (click)="addToCart()">Add To Cart</button>
+                    </form>
                 </div> 
                 <p class="center-grid"> {{birdData.description}} </p>
             </div>

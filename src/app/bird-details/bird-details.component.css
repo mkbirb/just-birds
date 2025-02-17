@@ -43,6 +43,7 @@
 
 .bird-details div.productAmount button.quantity:disabled {
     background-color: rgb(194, 194, 194);
+    cursor: not-allowed;
 }
 
 .bird-details button {
@@ -75,4 +76,24 @@
     width: 550px;
     border: 15px dashed rgb(74, 52, 0);
     border-radius: 10px;
+}
+
+.productAmount input[type="number"] {
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/* Hide number input arrows in WebKit-based browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide number input arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

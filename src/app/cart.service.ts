@@ -43,6 +43,9 @@ export class CartService {
   }
 
   addToCart(item: any, quantity: number) {
+    // Ensure that Quantity is a Number as the Two Way Binding that can occur for Quantity, can result to a String
+    quantity = Number(quantity);
+
     let existingItem = this.cart.find(cartItem => cartItem.item.name == item.name);
 
     // Checks if Existing Item exists
