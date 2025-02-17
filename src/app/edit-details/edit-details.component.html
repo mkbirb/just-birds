@@ -1,26 +1,34 @@
 <div class="editDetails">
+    <button class="goBack" (click)="toDashboard()"> Go Back </button>
     <div class="vertical-flex-container">
-        <p> Edit Details </p>
+        <img [src]="editIcon" alt="Edit Icon" />
+        <p class="title"> Edit Details </p>
         <form #editForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="vertical-flex-container">
                 <label for="username"> Username </label>
-                <input 
-                    name="username" 
-                    type="text" 
-                    placeholder="Your Username" 
-                    [(ngModel)]="username" 
-                     />
+                <div class="input-container">
+                    <input 
+                        name="username" 
+                        type="text" 
+                        placeholder="Your Username" 
+                        [(ngModel)]="username" 
+                         />
+                </div>
                 <label for="password"> Password </label>
-                <input 
-                    name="password" 
-                    [type]="showPassword ? 'text' : 'password'" 
-                    [(ngModel)]="password" 
-                    placeholder="Your Password" 
-                     />
-                <img class="eye-icon" (click)="showOrHidePassword()" [src]="showPassword ? showPasswordIcon: hidePasswordIcon" />
+                <div class="input-container">
+                    <div class="horizontal-flex-container">
+                        <input 
+                        name="password" 
+                        [type]="showPassword ? 'text' : 'password'" 
+                        [(ngModel)]="password" 
+                        placeholder="Your Password" 
+                         />
+                        <img class="eye-icon" (click)="showOrHidePassword()" [src]="showPassword ? showPasswordIcon: hidePasswordIcon" />
+                    </div>
+                </div>
                 <div class="horizontal-flex-container">
-                    <input type="submit">
-                    <button type="button" (click)="reset()"> Reset </button>
+                    <input class = "endButtons" type="submit">
+                    <button class = "endButtons" type="button" (click)="reset()"> Reset </button>
                 </div>
             </div>
         </form>

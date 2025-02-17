@@ -7,8 +7,71 @@
     margin-bottom: 20px;
 }
 
-.editDetails img.eye-icon {
+.editDetails img {
+    height: 100px;
+    width: 100px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px; 
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.input-container input {
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding-right: 50px;
+}
+
+.input-container img.eye-icon {
+    position: absolute;
+    right: 10px;
     height: 30px;
-    width: 35px;
+    width: 40px;
     cursor: pointer;
+}
+
+.goBack {
+    position: relative;
+    right: 30vw;
+    background-color: rgb(42, 166, 255);
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.editDetails label {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.editDetails .endButtons {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.editDetails button.endButtons {
+    background-color: rgb(255, 128, 1) !important;
 }

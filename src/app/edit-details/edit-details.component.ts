@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-details',
@@ -13,13 +14,18 @@ export class EditDetailsComponent implements OnInit{
   password: string = '';
   showPassword: boolean = false;
   showPasswordIcon = 'assets/images/eye-open.png';
-  hidePasswordIcon = 'assets/images/fafa-eye-slash.png'
+  hidePasswordIcon = 'assets/images/fafa-eye-slash.png';
+  editIcon = 'assets/images/pencil.png';
 
-  constructor(private authService: AuthService) {};
+  constructor(private authService: AuthService, private router: Router) {};
 
 
   ngOnInit(): void {
     this.initialValues();
+  }
+
+  toDashboard() {
+    this.router.navigateByUrl("/dashboard");
   }
 
   showOrHidePassword() {
