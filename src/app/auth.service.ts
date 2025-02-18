@@ -99,6 +99,10 @@ export class AuthService {
     }
   }
 
+  getIsLoggedIn() {
+    return this.isLoggedInSource.getValue();
+  }
+
 
   findUserIndex(username: string) {
     let users = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
