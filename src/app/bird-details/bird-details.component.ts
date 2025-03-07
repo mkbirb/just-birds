@@ -18,7 +18,7 @@ export class BirdDetailsComponent implements OnInit {
 
   birdQuantity: number = 1;
 
-  constructor(private cartService: CartService){};
+  constructor(private cartService: CartService, private route: ActivatedRoute){};
 
   
   // Get Current Route
@@ -27,7 +27,7 @@ export class BirdDetailsComponent implements OnInit {
   router = inject(Router);
 
   ngOnInit(): void {
-    this.id = Number(this.activeRoute.snapshot.paramMap.get('id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.birdData =  this.birdList.find(b => b.id === this.id);
   }
 
