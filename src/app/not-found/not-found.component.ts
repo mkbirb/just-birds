@@ -13,6 +13,6 @@ export class NotFoundComponent {
   router = inject(Router);
 
   backToHome() {
-    this.router.navigateByUrl('/home')
+    this.router.navigate(['/home']);
   }
 }
