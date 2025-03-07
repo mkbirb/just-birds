@@ -34,7 +34,8 @@
     background-color: #79ff47;
     color: white;
     font-style: italic;
-    margin-top: 30px;    
+    margin-top: 30px; 
+    cursor: pointer;   
 }
 
 .footer p.trademark {

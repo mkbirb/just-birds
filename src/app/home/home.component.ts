@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BIRDCATALOGLIST } from '../birdCatalog/BirdCatalogList';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,4 +24,10 @@ export class HomeComponent {
     {description: "We have a large catalog of many different species of Birds!", image: this.cockatoo},
     {description: "Gain your Pet Bird Certificate with ease!", image: this.petCertificate}
   ];
+
+  router = inject(Router);
+
+  toBirdCatalog() {
+    this.router.navigate(['/bird-catalog']);
+  }
 }
