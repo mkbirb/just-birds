@@ -43,3 +43,7 @@
     font-weight: bold;
     color: #ebe3ca;
 }
+
+.navigate a {
+    text-decoration: none;
+}

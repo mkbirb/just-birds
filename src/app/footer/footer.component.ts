@@ -20,6 +20,13 @@ export class FooterComponent {
     {socialName: "Youtube", image: this.youtubeLogo, link: "https://youtube.com"},
   ]
 
+  navigateList = [
+    {navigateName: "About Us", link: "/about"},
+    {navigateName: "Bird Catalog", link: "/bird-catalog"},
+    {navigateName: "Our Team", link: "/about"},
+    {navigateName: "Sign In", link: "/sign-in"},
+  ]
+
 
   toPortfolio() {
     window.location.href = "https://github.com/mkbirb/mk-portfolio";

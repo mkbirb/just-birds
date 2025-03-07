@@ -13,12 +13,11 @@
                 </div>
             </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item navigate">
             <p class="center-grid title"> Navigate </p>
-            <p class="center-grid"> About Us </p>
-            <p class="center-grid"> Bird Catalog </p>
-            <p class="center-grid"> Our Team </p>
-            <p class="center-grid"> Sign In </p>
+            @for (navigation of navigateList; track $index) {
+                <a [href] = "navigation.link"> <p class="center-grid"> {{navigation.navigateName}} </p> </a>
+            }
         </div>
         <div class="grid-item">
             <p class="center-grid title"> Visit my Portfolio: </p>
