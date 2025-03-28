@@ -28,7 +28,7 @@ Before running the application, ensure you have the following installed:
 3. Start the Application
    ```
    ng serve
-   ``
+   ```
 
 ## 🔭 See More
 Check out my portfolio website: https://mkportfolio-45eb7.web.app/
